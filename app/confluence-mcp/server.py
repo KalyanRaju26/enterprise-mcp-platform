@@ -6,16 +6,13 @@ mcp = FastMCP("Confluence MCP")
 
 client = ConfluenceClient()
 
-
 @mcp.tool()
 def hello():
     return "Confluence MCP is running"
 
-
 @mcp.tool()
 def list_spaces():
     return client.list_spaces()
-
 
 @mcp.tool()
 def search_pages(title: str):
@@ -28,7 +25,6 @@ def get_page(page_id: str):
 @mcp.tool()
 def search_content(text: str):
     return client.search_content(text)
-
 
 if __name__ == "__main__":
     mcp.run()
